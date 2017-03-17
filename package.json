@@ -1,0 +1,22 @@
+{
+  "name": "carl",
+  "version": "1.0.0",
+  "description": "Opinionated markdown to pdf cli tool",
+  "bin": {
+    "carl": "./bin/carl.js"
+  },
+  "keywords": [
+    "markdown",
+    "pdf"
+  ],
+  "author": "Simon Brix",
+  "license": "MIT",
+  "dependencies": {
+    "from2-string": "^1.1.0",
+    "markdown-it": "^8.3.1",
+    "markdown-it-anchor": "^4.0.0",
+    "merry": "^4.7.2",
+    "minimist": "^1.2.0",
+    "nightmare": "^2.10.0"
+  }
+}
