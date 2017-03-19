@@ -13,10 +13,7 @@ function Carl (opts) {
   if (!(this instanceof Carl)) return new Carl(opts)
   this.opts = opts || {}
 
-  this.nightmare = Nightmare({
-    dock: true,
-    show: true
-  })
+  this.nightmare = Nightmare(this.opts.debug)
 
   this.md = new MarkdownIt()
   this.md.use(markdownItAnchor)

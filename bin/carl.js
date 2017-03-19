@@ -7,12 +7,17 @@ var Carl = require('../')
 if (argv._.length) {
   var file = argv._[0]
   var fileName = path.basename(file).split('.')[0] + '.pdf'
+  var ghCss = path.join(__dirname, '../css/gh.css')
+  var debug = {
+    dock: true,
+    show: true
+  }
 
   var carl = new Carl({
     file: file,
-    css: argv.s || null,
-    output: argv.o || fileName
+    css: argv.g ? ghCss : argv.s || null,
+    output: argv.o || fileName,
+    debug: argv.d ? debug : {}
   })
   carl.run()
 }
-
