@@ -31,7 +31,7 @@ if (argv._.length) {
 
   var carl = new Carl({
     file: file,
-    css: argv.g ? ghCss : argv.s || null,
+    css: argv.g ? ghCss : argv.s || null,
     output: argv.o || fileName,
     debug: argv.d ? debug : {}
   })
