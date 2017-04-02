@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-var argv = require('minimist')(process.argv.slice(2))
+var minimist = require('minimist')
 var path = require('path')
+var cliclopts = require('cliclopts')
 var Carl = require('../')
 
 var usage = `
@@ -10,15 +11,43 @@ Carl - Convert Markdown to PDF
 Usage: carl [options] <markdown-file-path>
 
 Options:
-  -h      Output usage information
-  -o      Specify output file
-  -g      Render Markdown using Github flavoured CSS
-  -s      Path to custom CSS
-  -d      Enable debug information
+  -h, --help          Output usage information
+  -o, --output        Specify output file
+  -g, --github        Render Markdown using Github flavoured CSS
+  -s, --stylesheet    Path to custom CSS
+  -d, --debug         Enable debug information
 
 Docs: https://github.com/Briix/carl
 Bugs: https://github.com/Briix/carl/issues
 `
+
+var opts = cliclopts([
+  {
+    name: 'help',
+    abbr: 'h',
+    boolean: true
+  },
+  {
+    name: 'output',
+    abbr: 'o'
+  },
+  {
+    name: 'github',
+    abbr: 'g',
+    boolean: true
+  },
+  {
+    name: 'stylesheet',
+    abbr: 's'
+  },
+  {
+    name: 'debug',
+    abbr: 'd',
+    boolean: true
+  },
+])
+
+var argv = minimist(process.argv.slice(2), opts.options())
 
 if (argv._.length) {
   var file = argv._[0]

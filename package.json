@@ -13,6 +13,7 @@
   "author": "Simon Brix",
   "license": "MIT",
   "dependencies": {
+    "cliclopts": "^1.1.1",
     "from2-string": "^1.1.0",
     "markdown-it": "^8.3.1",
     "markdown-it-anchor": "^4.0.0",

@@ -17,11 +17,11 @@ Carl - Convert Markdown to PDF
 Usage: carl [options] <markdown-file-path>
 
 Options:
-  -h      Output usage information
-  -o      Specify output file
-  -g      Render Markdown using Github flavoured CSS
-  -s      Path to custom CSS
-  -d      Enable debug information
+  -h, --help          Output usage information
+  -o, --output        Specify output file
+  -g, --github        Render Markdown using Github flavoured CSS
+  -s, --stylesheet    Path to custom CSS
+  -d, --debug         Enable debug information
 
 Docs: https://github.com/Briix/carl
 Bugs: https://github.com/Briix/carl/issues
